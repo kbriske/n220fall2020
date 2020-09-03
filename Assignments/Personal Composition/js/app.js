@@ -10,7 +10,7 @@ function setup(){
     circle(200,400,80);
     arc(198,338,60,60,radians(90),QUARTER_PI, PI+QUARTER_PI);
     rect(157,350,85,30);
-    triangle(200,400,-800,800,-700,400);
+    triangle(200,410,200,400,250,405);
     strokeWeight(9);
     point(183,395);
     point(217,395);
