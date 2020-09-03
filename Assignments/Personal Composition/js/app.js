@@ -1,21 +1,17 @@
 function setup(){
     createCanvas(800,600);
-    background(0);
-    rect(200,300,500,300);
-    trianle()
-    "circle(400,300,50); maybe keep"
-    circle(400,550,150);
-    circle(400,470,120);
-    circle(400,400,80);
-    rect(357,350,85,30);
-    rect(377,325,40,40);
-   
-    triangle(400,400,310,300,300,300);
-
-    circle(200,550,150);
-    circle(200,470,120);
+    var sky = "#C7FFFF"
+    var posx = "200"
+    background(sky);
+    rect(posx,300,500,300);
+    triangle()
+    circle(posx,550,150);
+    circle(posx,470,120);
     circle(200,400,80);
+    arc(198,338,60,60,radians(90),QUARTER_PI, PI+QUARTER_PI);
     rect(157,350,85,30);
-    rect(177,325,40,40);
-
+    triangle(200,400,-800,800,-700,400);
+    strokeWeight(9);
+    point(183,395);
+    point(217,395);
 }
