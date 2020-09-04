@@ -30,6 +30,11 @@ function setup(){
     point(183,395);
     point(217,395);
     strokeWeight(1);
+    fill(0,0,0);
+    strokeWeight(0);
+    circle(200,435,40);
+    fill(255,255,255);
+    circle(200,440,40);
 
 
 }
