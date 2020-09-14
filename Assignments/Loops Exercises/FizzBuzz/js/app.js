@@ -19,7 +19,7 @@ function draw() {
             circle(count *20,y,18);
             noFill();
         }
-        if(count%5 == 0) {
+        if(count%5 == 0) { //issue is that it is placing the sqaure not relative to the circles
             fill(52, 235, 73);
             square(count*18,y2,19); //count*20,y,18
             noFill();
