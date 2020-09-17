@@ -13,7 +13,8 @@ function draw() {
     while(count < 25) {
         count = count+1;
         console.log(count);
-        circle(count *20,y,18);
+        fill(0);
+        circle(count*20,y,18);
         if(count%3 == 0) {
             fill(128, 52, 235);
             circle(count*20,y,18);
