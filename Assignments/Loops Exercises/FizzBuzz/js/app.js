@@ -5,7 +5,7 @@ y2 = 41
 
 //canvas creation
 function setup() {
-    createCanvas(800,600);
+    createCanvas(1000,100);
 }
 
 function draw() {
