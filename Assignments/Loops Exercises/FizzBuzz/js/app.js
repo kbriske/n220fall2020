@@ -14,21 +14,28 @@ function draw() {
         count = count+1;
         console.log(count);
         fill(0);
-        circle(count*20,y,18);
-        if(count%3 == 0) {
+        if(count%3 == 0 && count%5 == 0) {
+        fill(52, 116, 235);
+        square(count*20-9,y2,18); //count*20,y,18
+        noFill();
+        }
+        else if(count%3 == 0) {
             fill(128, 52, 235);
             circle(count*20,y,18);
             noFill();
-        }
-        if(count%5 == 0) { //issue is that it is placing the sqaure not relative to the circles
+        } else if(count%5 == 0) { //issue is that it is placing the sqaure not relative to the circles
             fill(52, 235, 73);
-            square(count*20,y2,18); //count*20,y,18
+            square(count*20-9,y2,18); //count*20,y,18
             noFill();
-        }
-        if(count%3 == 0 && count%5 == 0) {
+        } else if(count%3 == 0 && count%5 == 0) {
             fill(52, 116, 235);
             square(count*20,y2,18); //count*20,y,18
             noFill();
+        }
+        else {
+            circle(count*20,y,18);
+        
+        
         }
     }
 }
