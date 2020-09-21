@@ -1,3 +1,5 @@
+/*
+//Loop Practice----------
 let timer = 5;
 function setup() {
     createCanvas(400,400);
@@ -18,4 +20,67 @@ function draw() {
         circle(mouseX,mouseY,30);
     }
 }
+*/
 
+/*
+function setup() {
+    createCanvas(500,500);
+    background(0);
+}
+
+//Array Practice----------
+
+//let colorArray = ["perrywinkle", "violet"];
+//console.log(colorArray[0]); //will write perrywinkle
+//console.log("you can write text here: ". colorArray[0]);
+
+
+for(var i = 0; i < 2; i++) {
+    //console.log(i);
+    console.log(colorArray[i]);
+
+}
+
+
+//or
+
+
+for(i=0; i < colorArray.length; i++) {
+    console.log(colorArray[i]);
+}
+*/
+
+//More Array Practice----------
+/*
+let colors = ["#fcba03", "#0367fc"];
+
+function setup() {
+    createCanvas(500,500);
+
+
+for(var i = 0; i < colors.length; i++) {
+    fill(colors[i]);
+    circle(30*i+30, 200, 20);
+    }
+}
+*/
+
+let positions = [0,0,0,0]; //the more you add the more trail the circle will have
+
+function setup() {
+    createCanvas(400,300);
+
+
+}
+
+function draw() {
+    background(0);
+    console.log(positions);
+
+    positions.push(mouseX);
+    positions.shift();
+
+    for(var i = 0; i < positions.length; i++) {
+        circle(positions[i], 150,20);
+    }
+}
