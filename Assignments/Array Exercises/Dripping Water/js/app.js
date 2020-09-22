@@ -1,9 +1,7 @@
-let positionY = [16,0,0,0,0];
+let positionY = [16,150,201,81,345];
 let positionX = [120,330,250,610,400];
 let colors = ["#abc8ff", "#ebf2ff"];
 py = 0;
-
-//frameRate(fr); //what does this do
 
 function setup() {
     createCanvas(700,400);
