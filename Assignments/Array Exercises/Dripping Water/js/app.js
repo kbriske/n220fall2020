@@ -1,6 +1,9 @@
-let positionY = [0,0,0,0,0];
-let positionX = [0,0,0,0,0];
+let positionY = [16,0,0,0,0];
+let positionX = [120,330,250,610,400];
 let colors = ["#abc8ff", "#ebf2ff"];
+py = 0;
+
+//frameRate(fr); //what does this do
 
 function setup() {
     createCanvas(700,400);
@@ -9,14 +12,15 @@ function setup() {
 function draw() {
     background(colors[0]);
 
-    positionY.push(mouseX);
-    positionY.shift();
-
-    for(var i = 0; i < positionY.length; i++) {
-        fill(colors[1]);
-        circle(350, positionY[i], 25);
+    for(var i = 0; i < positionX.length; i++) {
+    fill(colors[1]);
+    py +=1;
+        circle(positionX[i], py, 25);
         if(positionY[i] <= 400) {
             positionY[i] = positionY[i] - 5;
+        }
+        if (py >= 400) {
+            py = 0;
         }
         console.log(positionY[i]);
     }
