@@ -1,4 +1,5 @@
-let position = [0,0,0,0,0];
+let positionY = [0,0,0,0,0];
+let positionX = [0,0,0,0,0];
 let colors = ["#abc8ff", "#ebf2ff"];
 
 function setup() {
@@ -8,15 +9,15 @@ function setup() {
 function draw() {
     background(colors[0]);
 
-    position.push(mouseX);
-    position.shift();
+    positionY.push(mouseX);
+    positionY.shift();
 
-    for(var i = 0; i < position.length; i++) {
+    for(var i = 0; i < positionY.length; i++) {
         fill(colors[1]);
-        circle(350, position[i], 25);
-        if(position[i] <= 400) {
-            position[i] = position[i] - 5;
+        circle(350, positionY[i], 25);
+        if(positionY[i] <= 400) {
+            positionY[i] = positionY[i] - 5;
         }
-        console.log(position[i]);
+        console.log(positionY[i]);
     }
 }
