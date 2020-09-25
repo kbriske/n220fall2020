@@ -1,32 +1,35 @@
-/*
-let posX = [0,0,0,0,0,0,0,0,0,0];
-let posY = [0,0,0,0,0,0,0,0,0,0];
+let x = mouseX;
+let y = mouseY; 
+  
+function setup() { 
+      
+    // Create Canvas 
+    createCanvas(500, 500); 
+} 
+   
+function draw() { 
+      
+    // Set the background color 
+    background(200);  
+      
+    // SEt the filled color 
+    fill('green'); 
+      
+    // Set the font size 
+    textSize(25); 
+      
+    text('Click mouse to change color', 30, 30); 
+      
+    // Fill color according to mouseClicked()  
+    fill(valueX, 255-valueY, 255-valueX); 
+      
+    // Draw ellipse   
+    rect(mouseX, mouseY, 25, 30); 
 
-function setup() {
-    createCanvas(700,700);
-}
-
-function draw() {
-    background(255, 218, 117);
-    circle(mouseX,mouseY,30);
-}
-*/
-let positions = [0,0,0,0]; //the more you add the more trail the circle will have
-
-function setup() {
-    createCanvas(400,300);
-
-
-}
-
-function draw() {
-    background(0);
-    console.log(positions);
-
-    positions.push(mouseX, mouseY);
-    positions.shift();
-
-    for(var i = 0; i < positions.length; i++) {
-        circle(positions[i], 150,20);
+} 
+  
+function mouseClicked() { 
+    function draw() {
+        rect(x,y,25,30);
     }
-}
+} 
