@@ -86,18 +86,23 @@ function draw() {
 }
 */
 //FUNCTIONS-------------------------------------------------------------------
-/*
+
 let sunX = 40;
+
 function setup() {
     createCanvas(400,300);
     background(100);
-
+    sunX = 0;
 }
 
 function draw() {
     background(100);
     sunX++;
-    drawSun("#ffbd08",21,mouseY, mouseX);
+    drawSun("#fcda51",21,mouseY - 10, sunX - 10);
+    drawSun("#293452",21,mouseY, sunX);
+    if(sunX >= 400) {
+        sunX = 40;
+    }
 }
 
 function drawSun(sunColor, numRays, yHeight, xHeight) {
@@ -110,12 +115,14 @@ function drawSun(sunColor, numRays, yHeight, xHeight) {
     }
     circle(xHeight,yHeight,40);
 }
-*/
+/*
 var functionResult = isEven(2);
 console.log(functionResult);
 
 function isEven(amount) {
     let result = amount % 2 == 0;
     return result;
-    // can also be written as return amount % 2 == 0;
+    // can also be written as: return amount % 2 == 0;
+
 }
+*/
