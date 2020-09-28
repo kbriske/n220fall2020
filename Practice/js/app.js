@@ -64,7 +64,7 @@ for(var i = 0; i < colors.length; i++) {
     }
 }
 */
-
+/*
 let positions = [0,0,0,0]; //the more you add the more trail the circle will have
 
 function setup() {
@@ -83,4 +83,39 @@ function draw() {
     for(var i = 0; i < positions.length; i++) {
         circle(positions[i], 150,20);
     }
+}
+*/
+//FUNCTIONS-------------------------------------------------------------------
+/*
+let sunX = 40;
+function setup() {
+    createCanvas(400,300);
+    background(100);
+
+}
+
+function draw() {
+    background(100);
+    sunX++;
+    drawSun("#ffbd08",21,mouseY, mouseX);
+}
+
+function drawSun(sunColor, numRays, yHeight, xHeight) {
+    console.log(sunColor);
+    fill(sunColor);
+    stroke(sunColor);
+    for(var i = 0; i < numRays; i++) {
+        line(xHeight,yHeight,i*20,300);
+
+    }
+    circle(xHeight,yHeight,40);
+}
+*/
+var functionResult = isEven(2);
+console.log(functionResult);
+
+function isEven(amount) {
+    let result = amount % 2 == 0;
+    return result;
+    // can also be written as return amount % 2 == 0;
 }
