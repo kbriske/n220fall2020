@@ -86,7 +86,7 @@ function draw() {
 }
 */
 //FUNCTIONS-------------------------------------------------------------------
-
+/*
 let sunX = 40;
 
 function setup() {
@@ -125,4 +125,13 @@ function isEven(amount) {
     // can also be written as: return amount % 2 == 0;
 
 }
+*/
+//IN CLASS PRACTICE
+/*
+function addNum(i,o) {
+    return i*o;
+}
+result = addNum(3,5);
+result = result*2;
+console.log(result);
 */
