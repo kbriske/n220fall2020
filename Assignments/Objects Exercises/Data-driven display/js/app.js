@@ -32,6 +32,7 @@ let cord = {
     }
 }
 
+//object (phone)
 let phone = {
     w: 65,
     h: 130,
@@ -43,8 +44,6 @@ let phone = {
         rect(mouseX,mouseY,this.w,this.h,this.cr);
         fill(this.color2); //fill for phone screen
         rect(mouseX+4,mouseY+3,this.w-8,this.h-7,this.cr);
-        console.log("x: " + mouseX);
-        console.log("y: " + mouseY);
     }
 }
 
