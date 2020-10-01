@@ -170,5 +170,6 @@ function setup() {
 }
 
 function draw() {
-    myCircle.up
+    myCircle.update();
+}
 */
