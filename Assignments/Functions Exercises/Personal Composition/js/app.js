@@ -1,6 +1,3 @@
-let moonX = 350; //moon X coordinate
-let moonY = 200; //moon Y coordinate
-
 function setup() { //sets up canvas
     createCanvas(700,400);
     background(5,0,28);
