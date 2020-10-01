@@ -135,3 +135,40 @@ result = addNum(3,5);
 result = result*2;
 console.log(result);
 */
+
+//OBJECTS-------------------------------------------------------------------
+/*
+let glasses = {
+    make: "Warby Parker",
+    model: "Haskell",
+    lense: "Blue-light filtering",
+    material: "Crystal",
+    weight: 25
+};
+console.log(glasses); //shows the contents of the object
+console.log(glasses.model); //shows specific contents of the object
+glasses.weight = glasses.weight - 5;
+console.log("weight of glasses: " + glasses.weight);
+*/
+
+//MORE OBJECT STUFF
+/*
+var myCircle = {
+    x: 20,
+    y: 30,
+    r: 15,
+    color: [156,0,250],
+    update: function() {
+        fill(this.color);
+        this.x += 2;
+        circle(this.x,this.y,this.r);
+    }
+}
+
+function setup() {
+    createCanvas(400,300);
+}
+
+function draw() {
+    myCircle.up
+*/
