@@ -34,8 +34,8 @@ let cord = {
 
 //object (phone)
 let phone = {
-    w: 65,
-    h: 130,
+    w: 75,
+    h: 140,
     cr: 10, //corner radius
     color: [57,57,57],
     color2: [0,0,0],
