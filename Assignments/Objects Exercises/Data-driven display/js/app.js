@@ -2,7 +2,7 @@
 let charger = {
     x: 200,
     y: 150,
-    r: 120,
+    r: 110,
     color: [54,54,54],
     color2: [74,74,74],
     update: function() {
@@ -24,7 +24,7 @@ let cord = {
     x: 197,
     y: 0,
     w: 6,
-    h: 90,
+    h: 95,
     color: [54,54,54],
     update: function() {
         fill(this.color);
