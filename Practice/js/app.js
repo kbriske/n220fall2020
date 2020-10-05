@@ -178,19 +178,30 @@ function draw() {
 
 var circles = [
     {x: 100, y: 20, r: 5},
-    {x: 20, y: 50, r: 15},
-    {x: 150, y: 200, r: 7},
-    {x: 300, y: 300, r: 20}
+    {x: 20, y: 50, r: 50},
+    {x: 150, y: 200, r: 25},
+    {x: 300, y: 250, r: 100}
 ];
 
 console.log(circles[2].y);
 
 function setup() {
     createCanvas(400,300);
+    noStroke();
+    fill(200);
 }
 
 function draw() {
     for(var i = 0; i < circles.length; i++) {
-        console.log(circles[i]);
+        let currentCircle = circles[i]; //if you want to be able to reference the object easily 
+        circle(currentCircle.x, currentCircle.y, currentCircle.r);
+        //circle(circles[i].x, circles[i].y, circles[i].r); original code
+        currentCircle.y += 2;
+
+        if(currentCircle.y > 300) {
+            currentCircle.x = Math.random() * 400
+            currentCircle.y = 0;
+            fill(Math.random() * 224);
+        }
     }
 }
