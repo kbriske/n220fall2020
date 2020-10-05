@@ -25,7 +25,7 @@ function draw() {
     for(i = 0; i < dots.length; i++) {
         fill(dots[i].c);
         circle(dots[i].x, dots[i].y, dots[i].r);
-        dots[i].y += 10;
+        dots[i].y += 4;
         if(dots[i].y >= 480) {
             dots[i].y = 20;
         }
