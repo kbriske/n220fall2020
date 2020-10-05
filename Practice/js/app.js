@@ -173,3 +173,24 @@ function draw() {
     myCircle.update();
 }
 */
+
+//MORE MORE OBJECT STUFF
+
+var circles = [
+    {x: 100, y: 20, r: 5},
+    {x: 20, y: 50, r: 15},
+    {x: 150, y: 200, r: 7},
+    {x: 300, y: 300, r: 20}
+];
+
+console.log(circles[2].y);
+
+function setup() {
+    createCanvas(400,300);
+}
+
+function draw() {
+    for(var i = 0; i < circles.length; i++) {
+        console.log(circles[i]);
+    }
+}
