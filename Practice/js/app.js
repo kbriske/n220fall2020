@@ -175,7 +175,7 @@ function draw() {
 */
 
 //MORE MORE OBJECT STUFF
-
+/*
 var circles = [
     {x: 100, y: 20, r: 5},
     {x: 20, y: 50, r: 50},
@@ -205,3 +205,4 @@ function draw() {
         }
     }
 }
+*/
