@@ -1,6 +1,6 @@
-//DONT FORGET TO SEE IF IT IS OKAY TO ALLOW IT TO RESET AFTER GOING OFF THE LEFT PANEL
-let velX = -2;
-let velY = -2;
+
+let velX = -3;
+let velY = -3;
 
 let paddle = {
     x: 390,
@@ -17,10 +17,33 @@ let paddle = {
         } else if (this.y >= 400 - this.h) {
             this.y = 400 - this.h; //I need this to limit mouseY's direction
         }
-        //console.log(mouseY);
     }
 }
-
+//uses W and S, requires change from mouseY to paddle.y on line 103
+/*
+let paddle = {
+    x: 390,
+    y: 150,
+    w: 10,
+    h: 100,
+    color: ("#EF5B5B"),
+    update: function() {
+        fill(this.color);
+        stroke(this.color);
+        rect(this.x, this.y, this.w, this.h);
+        if (keyIsDown(87)) {
+            this.y -=5;
+        } else if (keyIsDown(83)) {
+            this.y +=5;
+        }
+        if(this.y <= 0) {
+            this.y = 0;
+        } else if (this.y >= 400 - this.h) { //when to use nested ifs vs else ifs, I know that else ifs only run if the initial ifs conditions are not met
+            this.y = 400 - this.h;
+        }
+    }
+}
+*/
 let paddle2 = {
     x: 0,
     y: 150,
@@ -60,9 +83,8 @@ let ball = {
         } else if ((ball.y <= 15) || (ball.y >= 385)) { //if ball hits the top or bottom of the canvas, bounce
             velY = velY * -1;
         } else if (ball.x >= 400) { //if ball exceeds the right side of the canvas, reset
-            ball.x = 200, ball.y = 90, velX = -2, velY = -2;
+            ball.x = 200, ball.y = 90, velX = -3, velY = -3;
         }
-        //console.log("y: " + ball.y);
     }
 }
 
@@ -76,7 +98,7 @@ function draw() {
     paddle.update(); //why is this green? (because of the if statements?)
     paddle2.update();
     ball.update();
-    if(hitTest(paddle.x, mouseY, paddle.w, paddle.h, ball.x + 15, ball.y + 15)) { //if it is true (implied)?
+    if(hitTest(paddle.x, mouseY, paddle.w, paddle.h, ball.x + 15, ball.y + 15)) { //if it is true (implied)
         velX = velX * -1; //how can I add some deviation (see below)
         velY = velY * 1; //changed from -1
     }
