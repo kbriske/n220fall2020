@@ -78,11 +78,11 @@ function draw() {
     ball.update();
     if(hitTest(paddle.x, mouseY, paddle.w, paddle.h, ball.x + 15, ball.y + 15)) { //if it is true (implied)?
         velX = velX * -1; //how can I add some deviation (see below)
-        velY = velY * -1; 
+        velY = velY * 1; //changed from -1
     }
     if(hitTest(paddle2.x, paddle2.y, paddle2.w, paddle2.h, ball.x - 15, ball.y - 15)) {
         velX = velX * -1;
-        velY = velY * -1; 
+        velY = velY * 1; //changed from -1
         /*
         velX = velX * random(-1,-2);
         velY = velY * random(-1,-2); 
