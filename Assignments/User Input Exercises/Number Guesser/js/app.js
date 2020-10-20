@@ -11,6 +11,7 @@ function submitGuess() {
     let guess = (txtGuess.value);
 
     if(guess < randomNum) {
+        dvAttempt.innerHTML = ""
         return(dvRandom.innerHTML = "Your guess is too low");
     } else if (guess == randomNum) {
         randomNum = Math.floor(Math.random() * Math.floor(20));
@@ -18,8 +19,11 @@ function submitGuess() {
         dvAttempt.innerHTML = "Try guessing the new number";
         return(dvRandom.innerHTML = "Congratulations, you guessed the random number!");
     } else if (guess > randomNum) {
+        dvAttempt.innerHTML = ""
         return(dvRandom.innerHTML = "Your guess is too high");
     }
 }
+
+ //clears the message on refresh (needs to be on button click)
 
 //YOU CAN DELETE THE RETURN STATEMENTS AND JUST UPDATE THE DIV TAGS

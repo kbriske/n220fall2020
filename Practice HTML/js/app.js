@@ -1,3 +1,4 @@
+
 let txtName = document.getElementById("txtDieSize"); //references the HTML document
 //let txtDieSize = document.querySelector("#txtDieSize"); // do we need the #?
 let dvResult = document.getElementById("dvResult");
@@ -16,4 +17,3 @@ function rollDie() {
 function submit() {
     console.log("here is your number: " + txtName.value);
 }
-
