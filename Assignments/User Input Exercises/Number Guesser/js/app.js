@@ -24,6 +24,4 @@ function submitGuess() {
     }
 }
 
- //clears the message on refresh (needs to be on button click)
-
-//YOU CAN DELETE THE RETURN STATEMENTS AND JUST UPDATE THE DIV TAGS
+//YOU CAN DELETE THE RETURN STATEMENTS AND JUST UPDATE THE DIV
