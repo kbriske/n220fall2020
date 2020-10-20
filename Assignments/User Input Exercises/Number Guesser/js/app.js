@@ -11,14 +11,17 @@ function submitGuess() {
     let guess = (txtGuess.value);
 
     if(guess < randomNum) {
+        txtGuess.value = "";
         dvAttempt.innerHTML = ""
         return(dvRandom.innerHTML = "Your guess is too low");
     } else if (guess == randomNum) {
+        txtGuess.value = "";
         randomNum = Math.floor(Math.random() * Math.floor(20));
         console.log(randomNum);
         dvAttempt.innerHTML = "Try guessing the new number";
         return(dvRandom.innerHTML = "Congratulations, you guessed the random number!");
     } else if (guess > randomNum) {
+        txtGuess.value = "";
         dvAttempt.innerHTML = ""
         return(dvRandom.innerHTML = "Your guess is too high");
     }
