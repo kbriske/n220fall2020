@@ -20,8 +20,6 @@ function computeData() {
         avg = sum / splitString.length; //math for average
         dvAvg.innerHTML = "Average: " + avg;
         dvSum.innerHTML = "Sum: " + sum;
-        sum = 0; //sets sum back to 0
-        avg = 0; //sets average back to 0
     }
     console.log("average: " + avg);
     console.log("sum: " + sum);
