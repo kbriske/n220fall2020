@@ -1,27 +1,30 @@
 //REFERENCES
 var txtData = document.getElementById("txtData");
 var dataOutput = document.getElementById("dataOutput");
+var dvAvg = document.getElementById("dvAvg");
+var dvSum = document.getElementById("dvSum");
 
-/*
-var tString = "welcome to animal crossing new horizons"
-var splitString = tString.split(" ");
-console.log(tString);
-console.log(splitString);
-*/
-
-sum = 0;
+//variables
+var avg = 0;
+var sum = 0;
 
 function computeData() {
     //var inputString = txtData.value; do I need this?
     var splitString = txtData.value.split(","); //splits the string by commas into the individual numbers
-    //dataOutput.innerHTML = splitString[0]; //displays the first number in the new array 
-    console.log(splitString); //logs the array to the console
-    txtData.value = ""; //clears the input box
+    console.log(splitString);
+    txtData.value = ""; //clears the input box (HTML)
 
     for(i = 0; i < splitString.length; i++) {
-        var curData = splitString[i];
-        sum = sum + curData;
-        console.log("sum" + sum);
+        var numData = Number(splitString[i]); //I mean, this makes them into numbers
+        sum = sum + numData; //math for sum
+        avg = sum / splitString.length; //math for average
+        dvAvg.innerHTML = "Average: " + avg;
+        dvSum.innerHTML = "Sum: " + sum;
+        sum = 0; //sets sum back to 0
+        avg = 0; //sets average back to 0
     }
-    
+    console.log("average: " + avg);
+    console.log("sum: " + sum);
+    sum = 0; //sets sum back to 0
+    avg = 0; //sets average back to 0
 }
