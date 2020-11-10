@@ -1,3 +1,29 @@
+//REFERENCES
+var txtSentence = document.getElementById("txtSentence");
+var dvOutput = document.getElementById("dvOutput");
+var allWords = [];
+
+//Takes in words
+function breakString() {
+    var newWord = txtSentence.value;
+    console.log(newWord);
+    allWords.push(newWord); //shows all words
+    dvOutput.innerHTML = "";
+
+    //Display all words
+    for(i = 0; i < allWords.length; i++) {
+        var newEl = document.createElement("div");
+        newEl.innerHTML = allWords[i];
+
+
+    //If the word says "cloud" -> display in blue
+    if(allWords[i] == "cloud") {
+        newEl.style.color = "#4287f5";
+    }
+    dvOutput.appendChild(newEl);
+    }
+}
+/*
 var pizzas = [
     {name: "Pepperoni", price: 12},
     {name: "Cheese", price: 9},
@@ -19,6 +45,7 @@ for(i = 0; i < pizzas.length; i++) {
     //add to the page
     document.body.appendChild(newEl);
 }
+*/
 
 //SEARCHING AN ARRAY WITH INCLUDES
 /*
