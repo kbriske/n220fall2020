@@ -16,8 +16,3 @@ function scaleUp() {
     dvSquare.style.height = height + "px";
     console.log(width, height);
 }
-
-window.onclick = scaleDown;
-function scaleDown() {
-    width
-}
