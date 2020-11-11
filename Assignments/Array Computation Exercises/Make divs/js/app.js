@@ -9,9 +9,9 @@ let objects = [
 
 for(i = 0; i < objects.length; i++) {
     var newEl = document.createElement("div");
-    newEl.innerHTML = objects[i].color;
-    newEl.innerHTML = objects[i].height;
-    newEl.innerHTML = objects[i].width;
+    newEl.style.backgroundColor = objects[i].color;
+    newEl.style.height= objects[i].height + "px";
+    newEl.style.width = objects[i].width + "px";
     dvOut.appendChild(newEl);
     console.log(newEl);
 }
