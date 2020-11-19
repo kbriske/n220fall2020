@@ -8,7 +8,8 @@ var allWords = [];
 badWordTotal = 0;
 
 function filterText() {
-    var splitString = txtInput.value.split(" "); //splits the input by spaces
+    let splitString = txtInput.value.split(" "); //splits the input by spaces
+    let badWord = splitString.filter(word => word = "clear" )
     
     //allWords.push(txtInput.value); //adds the input to an array
     //console.log(allWords);
