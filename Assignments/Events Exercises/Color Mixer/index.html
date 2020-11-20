@@ -4,9 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .canvas {
+            width: 600px;
+            height: 250px;
+            background-color: currentColor;
+            margin: 5px;
+            float: left;
+            border-radius: 9px;
+        }
+        
+        .label1 {
+            width: 60px;
+            height: 50px;
+            background-color: #999999;
+            margin: 5px;
+            float: left;
+            border-radius: 9px;
+        }
+        
+        .label2 {
+            width: 100px;
+            height: 50px;
+            background-color: #999999;
+            margin: 5px;
+            float: left;
+            border-radius: 9px;
+        }
+        
+    </style>
 </head>
 <body>
-    
+    <div id="dvCanvas" class = canvas></div>
+    <div id="dvCurrentColor" class = label2 >Current Color: </div>
+    <div id="dvRed" class = label1 data-color = "(245, 66, 66)">Red</div>
+    <div id="dvRed5" data-color = "(245, 66, 66)">+5</div>
+
     <script src="js/app.js"></script>
 </body>
 </html>
+
+<!-- colors: #f54242, 245, 66, 66 -->
