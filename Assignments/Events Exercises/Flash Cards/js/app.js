@@ -2,6 +2,7 @@
 answer = document.getElementById("dvAnswer");
 
 function flipCard() {
-    dvAnswer.innerHTML = target.event.getAttribute;
+    var answer = event.target.getAttribute("data-answer");
+    dvAnswer.innerHTML = answer;
 }
 
