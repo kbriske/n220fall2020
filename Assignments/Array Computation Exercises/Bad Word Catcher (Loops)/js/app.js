@@ -30,3 +30,4 @@ function filterText() {
     badWordTotal = 0;
     splitString.length = 0;
 }
+
