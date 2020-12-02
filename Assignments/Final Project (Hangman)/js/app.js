@@ -57,7 +57,7 @@ for(i = 0; i < letters.length; i++) {
 
     button.addEventListener("click", msClicked); //listens for an event 
     button.addEventListener("click", filterText); //listens for event with a different function to invoke
-    
+
     function msClicked(event) { //when the mouse is clicked
         let choice = event.target.innerHTML; //choice is equal to the event.target.innerHTML (aka: a,b,c,etc)
         event.target.disabled = true; //disables the selection of a letter after it has been selected once
@@ -90,14 +90,20 @@ for(i = 0; i < letters.length; i++) {
 
 function setup() {
     createCanvas(1300,500);
-    background("#1A1B41");
+    background(26, 27, 65);
 }
 
-function draw() {
-    background("#1A1B41");
+function draw(event) {
+    background(26, 27, 65);
 
-    fill = (191, 215, 255);
-    circle(650,150, 90);
-
+    if(totalIncorrect == 1) {
+        fill(191, 215, 255);
+        circle(650,150, 90);
+    } else if(totalIncorrect == 2) {
+        noStroke();
+        fill(155, 177, 255);
+        rect(640, 170, 20, 100);
+        fill(191, 215, 255);
+        circle(650,150, 90);
+    }
 }
-
