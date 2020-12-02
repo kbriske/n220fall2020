@@ -1,6 +1,6 @@
 //REFERENCES
 showWord = document.getElementById("DisplayWord");
-let letterChoice = document.getElementById("letters")
+//let letterChoice = document.getElementById("letters")
 test = document.getElementById("dvTest");
 
 //array for word choices
@@ -9,6 +9,9 @@ let words = ["cat", "inflated", "crash", "royal", "sum", "space", "science", "si
 //randomly selects a word
 let randomChoice = Math.floor((Math.random() * words.length)); //picks a random number between 1 and the length of the array
 //console.log(randomChoice); //show the number generated
+
+var totalCorrect = 0;
+var totalIncorrect = 0;
 
 if(randomChoice == 0) {
     curWord = words[0];
@@ -42,21 +45,6 @@ if(randomChoice == 0) {
     showWord.innerHTML = "Word: " + words[9];
 }
 
-/*
-//splits the string into characters
-var chars = curWord.split('');
-console.log(chars);
-
-
-for(i = 0; i < chars; i++) {
-    var blankSpace = document.createElement("div"); //creates divs
-    var buttonDiv = document.getElementById("buttons");
-    buttonDiv.appendChild(space);
-}
-*/
-
-
-
 //array for letters
 let letters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
 
@@ -71,23 +59,45 @@ for(i = 0; i < letters.length; i++) {
     button.addEventListener("click", filterText); //listens for event with a different function to invoke
     
     function msClicked(event) { //when the mouse is clicked
-        let choice = event.target.innerHTML; //choice is equal to the target.innerHTML (aka: a,b,c,etc)
+        let choice = event.target.innerHTML; //choice is equal to the event.target.innerHTML (aka: a,b,c,etc)
         event.target.disabled = true; //disables the selection of a letter after it has been selected once
+        console.log(event.target.innerHTML);
     }
-    function filterText(event){
-        var splitString = curWord.split('');
-        dvTest.innerHTML = splitString;
+
+    function filterText(event){ //when the mouse is clicked
+        var splitString = curWord.split(''); //splits chosen word into an characters
+        dvTest.innerHTML = (event.target.innerHTML + " as not in the word");
+        totalIncorrect +=1;
+        console.log("total: " + totalIncorrect + " out of " + splitString.length); //CHANGE TO BE OUT OF THE 6 ATTEMPTS FOR BOTH
+        if(totalIncorrect == 6) {
+            dvTest.innerHTML = "You lose!";
+        }
+        //dvTest.innerHTML = splitString; //displays said characters
 
         for(i = 0; i < splitString.length; i++) {
-            if(splitString[i] == curWord) {
-                console.log("YAY");
+            if(event.target.innerHTML == splitString[i]) {  //if the innerHTML (letter) equals the splitString[i]
+                dvTest.innerHTML = (event.target.innerHTML + " was in the word"); //display that letter as being in the word
+                totalCorrect +=1; //add one to the total number of correct guesses
+                console.log("total: " + totalCorrect + " out of " + splitString.length);
+
+                if(totalCorrect == splitString.length) { //if the total is equal to the amount of letters in the word
+                    dvTest.innerHTML = "You got the word!"; //display that the word has been guessed
+                }
             }
         }
     }
 }
 
-var str = "Please locate where 'locate' occurs!";
-var pos = str.search("locate");
-dvTest.innerHTML = pos;
+function setup() {
+    createCanvas(1300,500);
+    background("#1A1B41");
+}
 
+function draw() {
+    background("#1A1B41");
+
+    fill = (191, 215, 255);
+    circle(650,150, 90);
+
+}
 
