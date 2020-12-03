@@ -1,12 +1,15 @@
 //REFERENCES
 space = document.getElementById("space");
-function createElement() {
+
   for(i = 0; i < 5; i ++) {
     var blank = document.createElement("div"); //creates buttons
     space.appendChild(blank);
 }
-}
+//elementRef.classList.add("space");
 
+
+
+/*
 var v = 1; 
 
 var f1 = function () { 
@@ -28,3 +31,4 @@ console.log('Results shown');
 const dessert = { type: 'pie' }; 
 dessert.type = 'pudding';
 console.log(dessert.type);
+*/
