@@ -2,6 +2,7 @@
 showWord = document.getElementById("DisplayWord");
 //let letterChoice = document.getElementById("letters")
 test = document.getElementById("dvTest");
+space = document.getElementById("space");
 
 //array for word choices
 let words = ["cat", "inflated", "crash", "royal", "sum", "space", "science", "silicon", "egypt", "jewel"];
@@ -45,6 +46,21 @@ if(randomChoice == 0) {
     showWord.innerHTML = "Word: " + words[9];
 }
 
+var splitWord = curWord.split(''); //splits chosen word into an characters
+console.log(splitWord);
+
+for(i = 0; i < splitWord.length; i ++) {
+    var blank = document.createElement("div"); //creates buttons
+    /*
+    if(splitWord[i] == event.target.innerHTML) {
+    button.innerHTML = splitWord[i]; //assigns a letter to each button from the array
+    }
+    */
+    //var buttonDiv = document.getElementById("buttons");
+    space.appendChild(blank);
+}
+
+
 //array for letters
 let letters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
 
@@ -59,14 +75,14 @@ for(i = 0; i < letters.length; i++) {
     button.addEventListener("click", filterText); //listens for event with a different function to invoke
 
     function msClicked(event) { //when the mouse is clicked
-        let choice = event.target.innerHTML; //choice is equal to the event.target.innerHTML (aka: a,b,c,etc)
+        let choice = event.target.innerHTML; //choice is equal to the event.target.innerHTML (aka: a,b,c,etc) DO I NEED THIS
         event.target.disabled = true; //disables the selection of a letter after it has been selected once
         console.log(event.target.innerHTML);
     }
 
     function filterText(event){ //when the mouse is clicked
         var splitString = curWord.split(''); //splits chosen word into an characters
-        dvTest.innerHTML = (event.target.innerHTML + " as not in the word");
+        dvTest.innerHTML = (event.target.innerHTML + " is not in the word");
         totalIncorrect +=1;
         console.log("total: " + totalIncorrect + " out of " + splitString.length); //CHANGE TO BE OUT OF THE 6 ATTEMPTS FOR BOTH
         if(totalIncorrect == 6) {
@@ -76,7 +92,7 @@ for(i = 0; i < letters.length; i++) {
 
         for(i = 0; i < splitString.length; i++) {
             if(event.target.innerHTML == splitString[i]) {  //if the innerHTML (letter) equals the splitString[i]
-                dvTest.innerHTML = (event.target.innerHTML + " was in the word"); //display that letter as being in the word
+                dvTest.innerHTML = (event.target.innerHTML + " is in the word"); //display that letter as being in the word
                 totalCorrect +=1; //add one to the total number of correct guesses
                 console.log("total: " + totalCorrect + " out of " + splitString.length);
 
@@ -87,6 +103,8 @@ for(i = 0; i < letters.length; i++) {
         }
     }
 }
+
+
 
 function setup() {
     createCanvas(1300,500);
