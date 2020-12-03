@@ -82,7 +82,7 @@ for(i = 0; i < letters.length; i++) {
 
     function filterText(event){ //when the mouse is clicked
         var splitString = curWord.split(''); //splits chosen word into an characters
-        dvTest.innerHTML = (event.target.innerHTML + " is not in the word");
+        //dvTest.innerHTML = (event.target.innerHTML + " is not in the word");
         totalIncorrect +=1;
         console.log("total: " + totalIncorrect + " out of " + splitString.length); //CHANGE TO BE OUT OF THE 6 ATTEMPTS FOR BOTH
         if(totalIncorrect == 6) {
@@ -92,7 +92,7 @@ for(i = 0; i < letters.length; i++) {
 
         for(i = 0; i < splitString.length; i++) {
             if(event.target.innerHTML == splitString[i]) {  //if the innerHTML (letter) equals the splitString[i]
-                dvTest.innerHTML = (event.target.innerHTML + " is in the word"); //display that letter as being in the word
+                //dvTest.innerHTML = (event.target.innerHTML + " is in the word"); //display that letter as being in the word
                 totalCorrect +=1; //add one to the total number of correct guesses
                 console.log("total: " + totalCorrect + " out of " + splitString.length);
 
