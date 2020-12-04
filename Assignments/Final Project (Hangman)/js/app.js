@@ -1,65 +1,28 @@
 //REFERENCES
 showWord = document.getElementById("DisplayWord");
-//let letterChoice = document.getElementById("letters")
 test = document.getElementById("dvTest");
 space = document.getElementById("space");
+dvOut = document.getElementById("dvOut");
 
 //array for word choices
 let words = ["cat", "inflated", "crash", "royal", "sum", "space", "science", "silicon", "egypt", "jewel"];
+let randomChoice = words[Math.floor(Math.random()*words.length)]; //randomly pulls a word from the array
+console.log(randomChoice);
 
-//randomly selects a word
-let randomChoice = Math.floor((Math.random() * words.length)); //picks a random number between 1 and the length of the array
-//console.log(randomChoice); //show the number generated
+//variables
+let totalCorrect = 0;
+let totalIncorrect = 0;
 
-var totalCorrect = 0;
-var totalIncorrect = 0;
-
-if(randomChoice == 0) {
-    curWord = words[0];
-    showWord.innerHTML = "Word: " + words[0];
-} else if(randomChoice == 1) {
-    curWord = words[1];
-    showWord.innerHTML = "Word: " + words[1];
-} else if(randomChoice == 2) {
-    curWord = words[2];
-    showWord.innerHTML = "Word: " + words[2];
-} else if(randomChoice == 3) {
-    curWord = words[3];
-    showWord.innerHTML = "Word: " + words[3];
-} else if(randomChoice == 4) {
-    curWord = words[4];
-    showWord.innerHTML = "Word: " + words[4];
-} else if(randomChoice == 5) {
-    curWord = words[5];
-    showWord.innerHTML = "Word: " + words[5];
-} else if(randomChoice == 6) {
-    curWord = words[6];
-    showWord.innerHTML = "Word: " + words[6];
-} else if(randomChoice == 7) {
-    curWord = words[7];
-    showWord.innerHTML = "Word: " + words[7];
-} else if(randomChoice == 8) {
-    curWord = words[8];
-    showWord.innerHTML = "Word: " + words[8];
-} else if(randomChoice == 9) {
-    curWord = words[9];
-    showWord.innerHTML = "Word: " + words[9];
-}
-
-var splitWord = curWord.split(''); //splits chosen word into an characters
+var splitWord = randomChoice.split(''); //splits chosen word into characters
+DisplayWord.innerHTML = randomChoice;
 console.log(splitWord);
 
+/*
 for(i = 0; i < splitWord.length; i ++) {
     var blank = document.createElement("div"); //creates buttons
-    /*
-    if(splitWord[i] == event.target.innerHTML) {
-    button.innerHTML = splitWord[i]; //assigns a letter to each button from the array
-    }
-    */
-    //var buttonDiv = document.getElementById("buttons");
     space.appendChild(blank);
 }
-
+*/
 
 //array for letters
 let letters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
@@ -77,35 +40,30 @@ for(i = 0; i < letters.length; i++) {
     function msClicked(event) { //when the mouse is clicked
         let choice = event.target.innerHTML; //choice is equal to the event.target.innerHTML (aka: a,b,c,etc) DO I NEED THIS
         event.target.disabled = true; //disables the selection of a letter after it has been selected once
-        console.log(event.target.innerHTML);
+        //console.log(event.target.innerHTML);
     }
 
     function filterText(event){ //when the mouse is clicked
-        var splitString = curWord.split(''); //splits chosen word into an characters
-        //dvTest.innerHTML = (event.target.innerHTML + " is not in the word");
-        totalIncorrect +=1;
-        console.log("total: " + totalIncorrect + " out of " + splitString.length); //CHANGE TO BE OUT OF THE 6 ATTEMPTS FOR BOTH
-        if(totalIncorrect == 6) {
-            dvTest.innerHTML = "You lose!";
-        }
-        //dvTest.innerHTML = splitString; //displays said characters
+        //IF IT IS A MATCH
+        let splitChoice = randomChoice.split('');
+        //console.log("TESTING: " + splitChoice);
 
-        for(i = 0; i < splitString.length; i++) {
-            if(event.target.innerHTML == splitString[i]) {  //if the innerHTML (letter) equals the splitString[i]
-                //dvTest.innerHTML = (event.target.innerHTML + " is in the word"); //display that letter as being in the word
-                totalCorrect +=1; //add one to the total number of correct guesses
-                console.log("total: " + totalCorrect + " out of " + splitString.length);
-
-                if(totalCorrect == splitString.length) { //if the total is equal to the amount of letters in the word
-                    dvTest.innerHTML = "You got the word!"; //display that the word has been guessed
+        for(i = 0; i < randomChoice.length; i++) {
+            if(event.target.innerHTML == splitChoice[i]) {
+                dvTest.innerHTML = (event.target.innerHTML + " is in the word!");
+                totalCorrect +=1;
+                console.log(totalCorrect);
+                if(totalCorrect >= randomChoice.length) {
+                    dvTest.innerHTML = ("You got the word!");
+                    alert("You win!");
+                    //location.reload();
                 }
             }
         }
     }
 }
-
-
-
+//IT DOES NOT LIKE IT WHEN I SAY != 
+        
 function setup() {
     createCanvas(1300,500);
     background(26, 27, 65);
@@ -125,3 +83,12 @@ function draw(event) {
         circle(650,150, 90);
     }
 }
+
+
+/*
+let objects = [
+    {color: "#FF0000", height: 100, width: 300},
+    {color: "#FFFF00", height: 200, width: 200},
+    {color: "#FF0000", height: 300, width: 100},
+];
+*/
