@@ -3,6 +3,8 @@ space = document.getElementById("space");
 
   for(i = 0; i < 5; i ++) {
     var blank = document.createElement("div"); //creates buttons
+    //blank.innerHTML = i;
+    blank.classList.add("space")
     space.appendChild(blank);
 }
 //elementRef.classList.add("space");
