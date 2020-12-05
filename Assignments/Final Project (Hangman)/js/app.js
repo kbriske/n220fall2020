@@ -98,17 +98,33 @@ function draw(event) {
     } else if(totalIncorrect == 2) {
         noStroke();
         fill(155, 177, 255);
-        rect(640, 170, 20, 100);
+        rect(640, 170, 20, 139);
         fill(191, 215, 255);
         circle(650,150, 90);
+    } else if(totalIncorrect == 3) {
+        noStroke();
+        fill(155, 177, 255);
+        rect(640, 170, 20, 139);
+        fill(191, 215, 255);
+        circle(650,150, 90);
+        translate(width / 2, height / 2);
+        rotate(PI / 3.0);
+        fill(155, 177, 255);
+        rect(-40, -11, 20, 100);
+    } else if(totalIncorrect == 4) {
+        noStroke();
+        fill(155, 177, 255);
+        rect(640, 170, 20, 139);
+        fill(191, 215, 255);
+        circle(650,150, 90);
+        translate(width / 2, height / 2);
+        rotate(PI / 3.0);
+        fill(155, 177, 255);
+        rect(-40, -11, 20, 100);
+        //translate(width / 2, height / 2);
+        rotate(PI / 3.0);
+        fill(155, 177, 255);
+        rect(110, -121, 20, 100);
     }
+    
 }
-
-
-/*
-let objects = [
-    {color: "#FF0000", height: 100, width: 300},
-    {color: "#FFFF00", height: 200, width: 200},
-    {color: "#FF0000", height: 300, width: 100},
-];
-*/
