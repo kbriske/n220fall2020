@@ -2,7 +2,6 @@
 showWord = document.getElementById("DisplayWord");
 test = document.getElementById("dvTest");
 space = document.getElementById("space");
-dvOut = document.getElementById("dvOut");
 
 //array for word choices
 let words = ["cat", "inflated", "crash", "royal", "sum", "space", "science", "silicon", "egypt", "jewel"];
@@ -15,9 +14,11 @@ let totalIncorrect = 0;
 let blanks = [];
 
 var splitWord = randomChoice.split(''); //splits chosen word into characters
-DisplayWord.innerHTML = randomChoice;
+//DisplayWord.innerHTML = randomChoice;
+DisplayWord.innerHTML = "Hangman";
 console.log(splitWord);
 
+//reset the page
 function reset() {
     location.reload();
 }
@@ -25,7 +26,7 @@ function reset() {
 for(i = 0; i < splitWord.length; i++) {
     var blank = document.createElement("div"); //creates buttons
     blank.classList.add("space");
-    blank.style.left = 500 + i*50 + "px";
+    blank.style.left = 700 + i*50 + "px";
     space.appendChild(blank);
     blanks.push(blank);
 }
@@ -59,72 +60,113 @@ for(i = 0; i < letters.length; i++) {
 
         for(i = 0; i < randomChoice.length; i++) {
             if(event.target.innerHTML == splitChoice[i]) {
-                dvTest.innerHTML = (event.target.innerHTML + " is in the word!");
+                dvTest.innerHTML = (event.target.innerHTML + " is in the word");
                 totalCorrect +=1;
                 found = true;
                 console.log(totalCorrect);
+                blanks[i].innerHTML = event.target.innerHTML; //yess, I got it
                 if(totalCorrect >= randomChoice.length) {
                     dvTest.innerHTML = ("You got the word!");
-                    alert("You win!");
-                    location.reload();
                     break;
                 }
             }
         }
+        //IF IT IS NOT A MATCH
         if(!found) {
-            dvTest.innerHTML = (event.target.innerHTML + " is is not the word!");
+            dvTest.innerHTML = (event.target.innerHTML + " is is not the word");
             totalIncorrect +=1;
             console.log(totalIncorrect);
-            if(totalIncorrect >= 6) {
-                alert("You lose!");
+            if(totalIncorrect == 6) {
+                dvTest.innerHTML = ("You lose, click reset to try again!");
+
+            }
+            else if(totalIncorrect >= 6) {
                 location.reload();
             }
         }
     }
 }
-//IT DOES NOT LIKE IT WHEN I SAY != 
-        
+
+//P5 
 function setup() {
-    createCanvas(1300,500);
-    background(26, 27, 65);
+    createCanvas(1375,500);
+    background(11, 57, 72);
+    //rectMode(CENTER);
 }
 
 function draw(event) {
-    background(26, 27, 65);
+    background(11, 57, 72);
+    noStroke();
+    fill(255,255,255);
+    rect(150,50,150,20); //top rectangle of the gallow
+    rect(175,70,20,380); //column of the gallow
+    rect(120,450,200,20); //base of the gallow
 
     if(totalIncorrect == 1) {
         fill(191, 215, 255);
-        circle(650,150, 90);
+        circle(300, 120, 90); //head
     } else if(totalIncorrect == 2) {
         noStroke();
-        fill(155, 177, 255);
-        rect(640, 170, 20, 139);
         fill(191, 215, 255);
-        circle(650,150, 90);
+        circle(300, 120, 90); //head
+        fill(155, 177, 255);
+        rect(290, 163, 20, 139); //spine
     } else if(totalIncorrect == 3) {
         noStroke();
-        fill(155, 177, 255);
-        rect(640, 170, 20, 139);
         fill(191, 215, 255);
-        circle(650,150, 90);
-        translate(width / 2, height / 2);
-        rotate(PI / 3.0);
+        circle(300, 120, 90); //head
         fill(155, 177, 255);
-        rect(-40, -11, 20, 100);
+        rect(290, 163, 20, 139); //spine
+        fill(155, 177, 255);
+        rect(230,200,60,20); //left arm
     } else if(totalIncorrect == 4) {
         noStroke();
-        fill(155, 177, 255);
-        rect(640, 170, 20, 139);
         fill(191, 215, 255);
-        circle(650,150, 90);
-        translate(width / 2, height / 2);
+        circle(300, 120, 90); //head
+        fill(155, 177, 255);
+        rect(290, 163, 20, 139); //spine
+        fill(155, 177, 255);
+        rect(230,200,60,20); //left arm
+        fill(155,177,255);
+        rect(310,199,60,20); //right arm
+    } else if(totalIncorrect == 5) {
+        noStroke();
+        fill(191, 215, 255);
+        circle(300, 120, 90); //head
+        fill(155, 177, 255);
+        rect(290, 163, 20, 139); //spine
+        fill(155, 177, 255);
+        rect(230,200,60,20); //left arm
+        fill(155,177,255);
+        rect(310,199,60,20); //right arm
         rotate(PI / 3.0);
         fill(155, 177, 255);
-        rect(-40, -11, 20, 100);
-        //translate(width / 2, height / 2);
+        rect(400, -117, 20, 90); //left leg
+    } else if(totalIncorrect == 6) {
+               noStroke();
+        fill(191, 215, 255);
+        circle(300, 120, 90); //head
+        fill(155, 177, 255);
+        rect(290, 163, 20, 139); //spine
+        fill(155, 177, 255);
+        rect(230,200,60,20); //left arm
+        fill(155,177,255);
+        rect(310,199,60,20); //right arm
         rotate(PI / 3.0);
         fill(155, 177, 255);
-        rect(110, -121, 20, 100);
-    }
+        rect(400, -117, 20, 90); //left leg
+        fill(155, 177, 255);
+        rect(405,-123,90,20); //right leg
     
+    }
 }
+/*
+translate(width / 2, height / 2);
+rotate(PI / 3.0); //must have to rotate
+fill(155, 177, 255);
+rect(-280, 290, 20, 100); //left arm
+//translate(width / 2, height / 2);
+rotate(PI / 3.0);
+fill(155, 177, 255);
+rect(40, 11, 20, 100);
+*/
