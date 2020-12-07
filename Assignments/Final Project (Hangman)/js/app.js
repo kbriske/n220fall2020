@@ -4,7 +4,7 @@ test = document.getElementById("dvTest");
 space = document.getElementById("space");
 
 //array for word choices
-let words = ["cat", "inflated", "crash", "royal", "sum", "space", "science", "silicon", "egypt", "jewel"];
+let words = ["cat", "inflated", "crash", "royal", "sum", "space", "science", "silicon", "egypt", "jewel","syzygy"];
 let randomChoice = words[Math.floor(Math.random()*words.length)]; //randomly pulls a word from the array
 console.log(randomChoice);
 
@@ -66,7 +66,7 @@ for(i = 0; i < letters.length; i++) {
                 console.log(totalCorrect);
                 blanks[i].innerHTML = event.target.innerHTML; //yess, I got it
                 if(totalCorrect >= randomChoice.length) {
-                    dvTest.innerHTML = ("You got the word!");
+                    dvTest.innerHTML = ("You win!");
                     break;
                 }
             }
