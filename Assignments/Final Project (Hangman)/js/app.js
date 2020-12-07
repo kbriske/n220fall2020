@@ -63,7 +63,7 @@ for(i = 0; i < letters.length; i++) {
                 dvTest.innerHTML = (event.target.innerHTML + " is in the word");
                 totalCorrect +=1;
                 found = true;
-                console.log(totalCorrect);
+                //console.log(totalCorrect);
                 blanks[i].innerHTML = event.target.innerHTML; //yess, I got it
                 if(totalCorrect >= randomChoice.length) {
                     dvTest.innerHTML = ("You win!");
@@ -75,7 +75,7 @@ for(i = 0; i < letters.length; i++) {
         if(!found) {
             dvTest.innerHTML = (event.target.innerHTML + " is is not the word");
             totalIncorrect +=1;
-            console.log(totalIncorrect);
+            //console.log(totalIncorrect);
             if(totalIncorrect == 6) {
                 dvTest.innerHTML = ("You lose, click reset to try again!");
 
