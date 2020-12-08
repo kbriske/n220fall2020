@@ -1,5 +1,5 @@
 //REFERENCES
-showWord = document.getElementById("DisplayWord");
+showWord = document.getElementById("showWord");
 test = document.getElementById("dvTest");
 space = document.getElementById("space");
 
@@ -15,7 +15,7 @@ let blanks = [];
 
 var splitWord = randomChoice.split(''); //splits chosen word into characters
 //DisplayWord.innerHTML = randomChoice;
-DisplayWord.innerHTML = "Hangman";
+showWord.innerHTML = "Hangman";
 console.log(splitWord);
 
 //reset the page
