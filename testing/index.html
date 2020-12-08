@@ -6,19 +6,31 @@
     <title>Document</title>
 
     <style>
-        .space {
-            width: 50px;
-            height: 25px;
-            margin: 4px;
+        .container {
+            display: flex;
+            justify-content: space-evenly;
             background-color: black;
-            float: left;
+            border-radius: 5px;
+            padding: 5px;
+        }
+        
+        .space {
+            background-color: #514cd9;
+            border: none;
+            color: white;
+            text-align: center;
+            font-size: 18px;
+            border-radius: 5px;
+            padding-left: 15px;
+            padding-right: 15px;
         }
 
     </style>
 </head>
 <body>
 
-    <div id="space"></div>
+    <div class="container" id="space"></div>
+    <div id="test"></div>
     
     <script src="js/app.js"></script>
 </body>
