@@ -73,7 +73,7 @@ for(i = 0; i < letters.length; i++) {
         }
         //IF IT IS NOT A MATCH
         if(!found) {
-            dvTest.innerHTML = (event.target.innerHTML + " is is not the word");
+            dvTest.innerHTML = (event.target.innerHTML + " is not in the word");
             totalIncorrect +=1;
             //console.log(totalIncorrect);
             if(totalIncorrect == 6) {
