@@ -160,13 +160,3 @@ function draw(event) {
     
     }
 }
-/*
-translate(width / 2, height / 2);
-rotate(PI / 3.0); //must have to rotate
-fill(155, 177, 255);
-rect(-280, 290, 20, 100); //left arm
-//translate(width / 2, height / 2);
-rotate(PI / 3.0);
-fill(155, 177, 255);
-rect(40, 11, 20, 100);
-*/
