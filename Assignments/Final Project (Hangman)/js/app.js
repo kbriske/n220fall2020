@@ -1,6 +1,6 @@
 //REFERENCES
 showWord = document.getElementById("showWord");
-test = document.getElementById("dvTest");
+showPrompt = document.getElementById("showPrompt");
 space = document.getElementById("space");
 
 //array for word choices
@@ -39,6 +39,7 @@ let letters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","
 for(i = 0; i < letters.length; i++) {
     var button = document.createElement("button"); //creates buttons
     button.innerHTML = letters[i]; //assigns a letter to each button from the array
+    button.classList.add("buttons");
     var buttonDiv = document.getElementById("buttons");
     buttonDiv.appendChild(button);
 
@@ -60,24 +61,24 @@ for(i = 0; i < letters.length; i++) {
 
         for(i = 0; i < randomChoice.length; i++) {
             if(event.target.innerHTML == splitChoice[i]) {
-                dvTest.innerHTML = (event.target.innerHTML + " is in the word");
+                showPrompt.innerHTML = (event.target.innerHTML + " is in the word");
                 totalCorrect +=1;
                 found = true;
                 //console.log(totalCorrect);
                 blanks[i].innerHTML = event.target.innerHTML; //yess, I got it
                 if(totalCorrect >= randomChoice.length) {
-                    dvTest.innerHTML = ("You win!");
+                    showPrompt.innerHTML = ("You win!");
                     break;
                 }
             }
         }
         //IF IT IS NOT A MATCH
         if(!found) {
-            dvTest.innerHTML = (event.target.innerHTML + " is not in the word");
+            showPrompt.innerHTML = (event.target.innerHTML + " is not in the word");
             totalIncorrect +=1;
             //console.log(totalIncorrect);
             if(totalIncorrect == 6) {
-                dvTest.innerHTML = ("You lose, click reset to try again!");
+                showPrompt.innerHTML = ("You lose, click reset to try again!");
 
             }
             else if(totalIncorrect >= 6) {
@@ -90,12 +91,12 @@ for(i = 0; i < letters.length; i++) {
 //P5 
 function setup() {
     createCanvas(1375,500);
-    background(11, 57, 72);
+    background(35, 61, 88);
     //rectMode(CENTER);
 }
 
 function draw(event) {
-    background(11, 57, 72);
+    background(35, 61, 88);
     noStroke();
     fill(255,255,255);
     rect(150,50,150,20); //top rectangle of the gallow
