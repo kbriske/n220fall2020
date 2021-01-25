@@ -13,7 +13,7 @@ let totalCorrect = 0;
 let totalIncorrect = 0;
 let blanks = [];
 
-var splitWord = randomChoice.split(''); //splits chosen word into characters
+let splitWord = randomChoice.split(''); //splits chosen word into characters
 //DisplayWord.innerHTML = randomChoice;
 showWord.innerHTML = "Hangman";
 console.log(splitWord);
@@ -37,10 +37,10 @@ let letters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","
 
 //generates letters on the page
 for(i = 0; i < letters.length; i++) {
-    var button = document.createElement("button"); //creates buttons
+    let button = document.createElement("button"); //creates buttons
     button.innerHTML = letters[i]; //assigns a letter to each button from the array
     button.classList.add("buttons");
-    var buttonDiv = document.getElementById("buttons");
+    let buttonDiv = document.getElementById("buttons");
     buttonDiv.appendChild(button);
 
     button.addEventListener("click", msClicked); //listens for an event 
