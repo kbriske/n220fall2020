@@ -1,4 +1,8 @@
 //REFERENCES
+const dessert = { type: 'pie' }; 
+dessert.type = 'pudding';
+console.log(dessert.type);
+/*
 space = document.getElementById("space");
 test = document.getElementById("test");
 
