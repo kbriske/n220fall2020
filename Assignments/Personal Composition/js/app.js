@@ -35,6 +35,4 @@ function setup(){
     circle(200,435,40);//me: cant make a crescent
     fill(255,255,255);  
     circle(200,440,40); //I did try for a long time, though
-
-
 }
