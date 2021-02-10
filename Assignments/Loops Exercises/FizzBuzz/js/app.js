@@ -18,8 +18,7 @@ function draw() {
         fill(52, 116, 235);
         square(count*20-9,y2,18); //count*20,y,18
         noFill();
-        }
-        else if(count%3 == 0) {
+        } else if(count%3 == 0) {
             fill(128, 52, 235);
             circle(count*20,y,18);
             noFill();
@@ -34,8 +33,6 @@ function draw() {
         }
         else {
             circle(count*20,y,18);
-        
-        
         }
     }
 }
