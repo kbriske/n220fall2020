@@ -17,7 +17,3 @@ function setup() {
         console.log(colors2[i]);
     }
 }
-
-
-
-

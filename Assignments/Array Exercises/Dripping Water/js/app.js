@@ -12,7 +12,7 @@ function draw() {
 
     for(var i = 0; i < positionX.length; i++) {
     fill(colors[1]);
-    py +=1;
+    py++;
         circle(positionX[i], py, 25);
         if(positionY[i] <= 400) {
             positionY[i] = positionY[i] - 5;
