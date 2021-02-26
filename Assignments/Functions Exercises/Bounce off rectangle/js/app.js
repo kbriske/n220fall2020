@@ -29,6 +29,7 @@ function draw() {
         velY = 5;
     }
 }
+
 function collideRect(circleX, circleY, rectX, rectY, rectW, rectH) {
     //assume no hit
     var colliding = false;
