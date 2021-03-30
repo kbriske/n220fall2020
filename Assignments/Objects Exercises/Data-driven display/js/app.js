@@ -33,35 +33,35 @@ let cord = {
 }
 
 //object (phone)
-// let phone = {
-//     w: 75,
-//     h: 140,
-//     cr: 10, //corner radius
-//     color: [57,57,57],
-//     color2: [0,0,0],
-//     update: function() {
-//         fill(this.color);
-//         rect(mouseX,mouseY,this.w,this.h,this.cr);
-//         fill(this.color2); //fill for phone screen
-//         rect(mouseX+4,mouseY+3,this.w-8,this.h-7,this.cr);
-//     }
-// }
-
-let disc = {
-    x: 100,
-    y: 100,
-    r: 90,
-    color: [199,199,199],
-    color2: [255,255,255],
+let phone = {
+    w: 75,
+    h: 140,
+    cr: 10, //corner radius
+    color: [57,57,57],
+    color2: [0,0,0],
     update: function() {
-        fill(this.color),
-        stroke(this.color),
-        circle(mouseX, mouseY, this.r),
-        fill(this.color2),
-        stroke(this.color),
-        circle(mouseX, mouseY, this.r/6);
+        fill(this.color);
+        rect(mouseX,mouseY,this.w,this.h,this.cr);
+        fill(this.color2); //fill for phone screen
+        rect(mouseX+4,mouseY+3,this.w-8,this.h-7,this.cr);
     }
 }
+
+// let disc = {
+//     x: 100,
+//     y: 100,
+//     r: 90,
+//     color: [199,199,199],
+//     color2: [255,255,255],
+//     update: function() {
+//         fill(this.color),
+//         stroke(this.color),
+//         circle(mouseX, mouseY, this.r),
+//         fill(this.color2),
+//         stroke(this.color),
+//         circle(mouseX, mouseY, this.r/6);
+//     }
+// }
 
 function setup() {
     createCanvas(1000,700);
@@ -72,6 +72,6 @@ function draw() {
     background(255,255,255);
     charger.update(); //updates object on screen
     cord.update();
-    // phone.update();
-    disc.update();
+    phone.update();
+    // disc.update();
 }
