@@ -21,13 +21,13 @@ function draw() {
     background("#C5D5E4");
     character.update();
     if(keyCode == LEFT_ARROW) {
-        character.x -=1;
+        character.x -=5;
     } else if (keyCode == RIGHT_ARROW) {
-        character.x +=1;
+        character.x +=5;
     } else if (keyCode == UP_ARROW) {
-        character.y -=1;
+        character.y -=5;
     } else if (keyCode == DOWN_ARROW) {
-        character.y +=1;
+        character.y +=5;
     }
 }
 //"#391463" persian indigo
