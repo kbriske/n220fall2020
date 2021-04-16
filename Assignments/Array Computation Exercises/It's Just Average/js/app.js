@@ -15,7 +15,7 @@ function computeData() {
     txtData.value = ""; //clears the input box (HTML)
 
     for(i = 0; i < splitString.length; i++) {
-        var numData = Number(splitString[i]); //I mean, this makes them into numbers
+        let numData = Number(splitString[i]); //I mean, this makes them into numbers
         sum = sum + numData; //math for sum
         avg = sum / splitString.length; //math for average
         dvAvg.innerHTML = "Average: " + avg;
