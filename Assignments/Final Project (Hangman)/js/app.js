@@ -158,6 +158,5 @@ function draw(event) {
         rect(400, -117, 20, 90); //left leg
         fill(155, 177, 255);
         rect(405,-123,90,20); //right leg
-    
     }
 }
